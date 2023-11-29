@@ -1,0 +1,28 @@
+    <footer class="bg-dark text-white text-center py-3">
+       
+       
+
+
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <h3>Autóbérlés Székesfehérváron</h3>
+                <br></br>
+               <p>Ha a legmegbizhatóbb helyet keresi autóbérlésre Székesfehérváron minket válasszon!</p>
+              </div>
+              <div class="col-sm">
+                <h3>Kapcsolat</h3>
+                <br></br>
+               <p><i class="fa-solid fa-phone"></i>Telefonszám:+33 20 222 2222</p>
+               <p>Email:szekesfehervarberles@gmail.com</p>
+              </div>
+              <div class="col-sm">
+               <h3>Elérhetőség</h3>
+               <br></br>
+               <p>Hétfő-Péntek:  07<sup>00</sup> - 17<sup>00</sup></p>
+               <p>Szombat:   07<sup>00</sup> - 17<sup>00</sup></p>
+               <p>Vasárnap: Zárva</p>
+              
+              </div>
+            </div>
+</footer>
