@@ -23,5 +23,9 @@ class Database {
         $result = $this->db->query("SELECT * FROM `jarmuvek` WHERE id = ".$id);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
- 
+    
+        public function getKiemeltAjanlatok(){
+            $result = $this->db->query("SELECT * FROM `jarmuvek`");
+            return $result->fetch_all(MYSQL_ASSOC);
+        }
 }

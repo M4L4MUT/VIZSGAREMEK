@@ -7,6 +7,9 @@ switch ($menu) {
     case 'kapcsolat':
         require_once './pages/kapcsolat.php';
         break;
+    case 'rolunk':
+        require_once './pages/rolunk.php';
+        break;
     case 'kivalasztottauto':
         require_once './pages/kivalasztottauto.php';
         break;
