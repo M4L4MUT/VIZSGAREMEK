@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./layout/kivalasztottauto.css">
 <?php
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 $autoAdatok = $db->getAuto($id);
@@ -71,7 +72,7 @@ function tajekoztato() {
     echo tajekoztato();
     ?>
     <div id="kiemeltAjanlatok">
-        <div class="row">
+        
             <?php
             $a = 0;
 
@@ -92,21 +93,23 @@ function tajekoztato() {
 
                 if ($a < 3) {
                     ?>
-                    <div id="kartyak" class="col-md-3 mb-4">
-                        <div class="card" style="width: 100%; height: 300px;">
-                            <a href="index.php?menu=kivalasztottauto&id=<?php echo $row["id"]; ?>" ><img src="<?= $image ?>" class="card-img-top" alt="..."></a>
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $row['marka'] ?> <?= $row['modell'] ?></h5>
+                    <a href="index.php?menu=kivalasztottauto&id=<?php echo $row["id"]; ?>" >
+                        <div class="wrapper">
+                            <div class="card">
+                                <img src="<?= $image ?>" class="card-img-top" alt="...">
+
+                                <h1><?= $row['marka'] ?> <?= $row['modell'] ?></h1>
+                                <p><?= $row['berletidij'] ?></p>
+                                <div class="info"><?= $row['berletidij'] ?></div>
                             </div>
-                        </div>
-                    </div>
+                        </div></a>
                     <?php
                     $a++;
                 }
             }
             ?>
 
-        </div>
+        
     </div>
 </div>
 
