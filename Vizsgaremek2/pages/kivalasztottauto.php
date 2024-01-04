@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./layout/kivalasztottauto.css">
+<div id="kivalasztottauto">
 <?php
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 $autoAdatok = $db->getAuto($id);
@@ -36,11 +36,13 @@ function jarmuleiras() {
     global $autoAdatok;
     $html = '<div id="jarmuLeiras">'
             . "<div style='font-size: 35px; font-style: inherit; color: black; text-align: center; padding-top: 10px; font-family: cursive; font-weight: bold;'><p>" . $autoAdatok[0]['marka'] . " " . $autoAdatok[0]['modell'] . " " . $autoAdatok[0]['motor'] . " bérelhető</p></div>"
-            . "<h4> Üzemanyag: " . $autoAdatok[0]['uzemanyag'] . "</h4>"
-            . "<h4> Kilométeróra állás: " . $autoAdatok[0]['km'] . "</h4>"
-            . "<h4> Kaukció: " . $autoAdatok[0]['kaukcio'] . "</h4>"
-            . "<h4> Bérleti díj: " . $autoAdatok[0]['berletidij'] . "</h4>"
-            . "</div>";
+            ."<table>"
+            . "<tr><td class='o1'>Üzemanyag:</td> <td class='o2'>" . $autoAdatok[0]['uzemanyag'] . "</td><tr>"
+            . "<tr><td class='o1'>Kilométeróra állás: </td> <td class='o2'>" . $autoAdatok[0]['km'] . " Km</td><tr>"
+            . "<tr><td class='o1'>Kaukció: </td> <td class='o2'>" . $autoAdatok[0]['kaukcio'] . " Ft</td><tr>"
+            . "<tr><td class='o1'>Bérleti díj: </td> <td class='o2'>" . $autoAdatok[0]['berletidij'] . " Ft</td><tr>"
+            . "<tr><td class='o1'>Szállítható Személyek: </td> <td class='o2'>" . $autoAdatok[0]['szszam'] . " Fő</td><tr>"
+            . "</table></div>";
     return $html;
 }
 
@@ -72,7 +74,7 @@ function tajekoztato() {
     echo tajekoztato();
     ?>
     <div id="kiemeltAjanlatok">
-        
+        <div class="wrapper">
             <?php
             $a = 0;
 
@@ -94,14 +96,13 @@ function tajekoztato() {
                 if ($a < 3) {
                     ?>
                     <a href="index.php?menu=kivalasztottauto&id=<?php echo $row["id"]; ?>" >
-                        <div class="wrapper">
-                            <div class="card">
+                        
+                            <div class="card"><div class="info">
+                                <h1><?= $row['marka'] ?> <?= $row['modell'] ?>
+                                <?= $row['berletidij'] ?></div></h1>
                                 <img src="<?= $image ?>" class="card-img-top" alt="...">
-
-                                <h1><?= $row['marka'] ?> <?= $row['modell'] ?></h1>
-                                <p><?= $row['berletidij'] ?></p>
-                                <div class="info"><?= $row['berletidij'] ?></div>
-                            </div>
+                              
+                            
                         </div></a>
                     <?php
                     $a++;
@@ -109,7 +110,7 @@ function tajekoztato() {
             }
             ?>
 
-        
+        </div>
     </div>
 </div>
 
@@ -182,3 +183,4 @@ function tajekoztato() {
 </div>
 
 
+</div>

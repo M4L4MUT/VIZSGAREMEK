@@ -7,17 +7,12 @@ $db = new Database("localhost", "root", "", "auto");
 
 require_once './layout/head.php';
 $menu = filter_input(INPUT_GET, "menu");
-
 ?>
 <body>
     <?php
     require_once './layout/menu.php';
     require_once './tartalom.php';
-    require_once './layout/footer.php';?>
-
-    
-    <script src="./bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
-    <!-- https://getbootstrap.com/docs/5.3/forms/validation/ -->
-    <script src="./js/tvshop.js"></script>
+    require_once './layout/footer.php';
+    ?>
 </body>
 </html>
